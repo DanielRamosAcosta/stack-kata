@@ -8,6 +8,7 @@ describe("Stack", () => {
     const isEmpty = stack.isEmpty()
 
     expect(isEmpty).toBe(true)
+    expect(stack.size).toBe(0)
   })
 
   it("pushes an element", () => {
@@ -41,4 +42,12 @@ describe("Stack", () => {
     expect(stack.isEmpty()).toBe(true)
   })
 
+  it("gets the size of the stack", () => {
+    const stack = new Stack()
+    stack.push("foo")
+
+    const sizeOfStack = stack.size
+
+    expect(sizeOfStack).toBe(1)
+  })
 })

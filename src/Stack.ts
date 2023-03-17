@@ -1,5 +1,9 @@
 export class Stack {
+  private items: Array<string> = []
+  push(item: string) {
+    this.items.push(item)
+  }
   isEmpty() {
-    return true
+    return this.items.length === 0
   }
 }

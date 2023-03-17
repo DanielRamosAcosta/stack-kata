@@ -73,4 +73,15 @@ describe("Stack", () => {
 
     expect(sizeOfStack).toBe(1)
   })
+
+  it("fails when stack limit is reached", () => {
+    const stack = new Stack()
+    stack.push("foo")
+    stack.push("foo")
+    stack.push("foo")
+    stack.push("foo")
+    stack.push("foo")
+
+    expect(() => stack.push("foo")).toThrowError("Stack overflow")
+  })
 })

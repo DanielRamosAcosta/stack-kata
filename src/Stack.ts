@@ -1,12 +1,15 @@
 export class Stack {
-  private items: Array<string> = []
-  push(item: string) {
-    this.items.push(item)
+  private elements: Array<string> = []
+  push(element: string) {
+    this.elements.push(element)
   }
+  pop(): string {
+    return this.elements.pop()
+  } 
   isEmpty() {
-    return this.items.length === 0
+    return this.elements.length === 0
   }
   peek() {
-    return this.items[this.items.length - 1]
+    return this.elements[this.elements.length - 1]
   }
 }

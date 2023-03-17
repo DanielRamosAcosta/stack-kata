@@ -10,11 +10,11 @@ describe("Stack", () => {
     expect(isEmpty).toBe(true)
   })
 
-  it("pushes an item", () => {
+  it("pushes an element", () => {
     const stack = new Stack()
-    const item = "foo"
+    const element = "foo"
 
-    stack.push(item)
+    stack.push(element)
 
     expect(stack.isEmpty()).toBe(false)
     expect(stack.peek()).toBe("foo")
@@ -22,11 +22,23 @@ describe("Stack", () => {
 
   it("peeks the last element", () => {
     const stack = new Stack()
-    const item = "bar"
-    stack.push(item)
+    const element = "bar"
+    stack.push(element)
 
-    const peekedItem = stack.peek()
+    const peekedElement = stack.peek()
 
-    expect(peekedItem).toBe("bar")
+    expect(peekedElement).toBe("bar")
   })
+
+  it("pops the last element", () => {
+    const stack = new Stack()
+    const element = "foo"
+    stack.push(element)
+
+    const poppedElement = stack.pop()
+
+    expect(poppedElement).toBe("foo")
+    expect(stack.isEmpty()).toBe(true)
+  })
+
 })
